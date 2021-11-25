@@ -87,7 +87,7 @@ ElementType ProcessBracket(OperandStack& operandStack, OperationStack& operation
 bool IsPreficsPossible(ElementType prevElementType) {
   return prevElementType == ElementType::BINARY || prevElementType == ElementType::DELIMETR_ARGS ||
          prevElementType == ElementType::OPEN_BRACKET || prevElementType == ElementType::PREFICS ||
-         prevElementType == ElementType::SIMBOL_AFTER_ARGS;
+         prevElementType == ElementType::SIMBOL_BEFORE_ARGS;
 }
 
 /**

@@ -222,7 +222,7 @@ public:
   * @param[in] operation - function that performs a specific operation
   * @param[in] associative - operator associativity
   */
-  BinaryOperator(const std::string& name, int prioryty, DoBinaryOperation operation, Associative associative = Associative::RIGHT) :
+  BinaryOperator(const std::string& name, int prioryty, DoBinaryOperation operation, Associative associative = Associative::LEFT) :
     name(name), prioryty(prioryty), doOperation(operation), assotiative(associative) {};
 
   /**

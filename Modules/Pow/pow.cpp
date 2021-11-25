@@ -7,7 +7,7 @@ std::shared_ptr<Literal> Pow(std::shared_ptr<Operand> a, std::shared_ptr<Operand
 
 extern "C" __declspec(dllexport) void __cdecl Load(OperationsDescription & dstr) {
   //OperationsDescription& dstr = OperationsDescription::GetInstance();
-  const BinaryOperator pow = { "^", 4, Pow, BinaryOperator::Associative::LEFT};
+  const BinaryOperator pow = { "^", 4, Pow, BinaryOperator::Associative::RIGHT};
 
   dstr.LoadOperation(std::make_shared<BinaryOperator>(pow));
 }
