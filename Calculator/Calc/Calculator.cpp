@@ -61,7 +61,7 @@ ElementType ProcessBracket(OperandStack& operandStack, OperationStack& operation
     if (operation.GetName() == std::string{ SIMBOL_AFTER_ARGS } && operationStack.top()->GetType() == ElementType::FUNCTION) {
       operationStack.top()->DoOperation(operandStack);
       operationStack.pop();
-      return ElementType::SIMBOL_BEFORE_ARGS;
+      return ElementType::SIMBOL_AFTER_ARGS;
     }
     else if (operationStack.top()->GetType() == ElementType::OPEN_BRACKET && operationStack.top()->GetTokenName() == pare) {
       operationStack.top()->DoOperation(operandStack);
@@ -243,7 +243,7 @@ double Calculate(const std::string& expression) {
     operationStack.pop();
   }
 
-  if (operandStack.size() != 1)
+  if (operandStack.size() != 1 || operationStack.size() != 0)
     throw std::exception("Error expression");
 
   for (auto& var : localVariable)

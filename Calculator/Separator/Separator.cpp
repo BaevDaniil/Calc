@@ -56,7 +56,7 @@ Token SeparateNamedToken(const std::string& expression, const size_t curPos, siz
     if (Variable::IsValidValueName(expressionPart))
       return Token(Token::Type::VARIABLE, expressionPart);
   }
-  throw "Unknown identifier";
+  throw std::exception("Unknown identifier");
 }
 
 std::vector<Token> Separate(const std::string& expression) {
