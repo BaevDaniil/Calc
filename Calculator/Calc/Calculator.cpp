@@ -207,8 +207,8 @@ double Calculate(const std::string& expression) {
         operationStack.top()->DoOperation(operandStack);
         operationStack.pop();
       }
-      if (operationStack.top()->GetType() != ElementType::FUNCTION)
-        throw std::exception("Unexpected " + DELIMETR_ARGS);
+      if (operationStack.empty() || operationStack.top()->GetType() != ElementType::FUNCTION)
+        throw std::exception("Unexpected ,");
       prevElementType = ElementType::DELIMETR_ARGS;
       break;
     case Token::Type::LITERAL:
