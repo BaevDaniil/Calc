@@ -166,6 +166,7 @@ ElementType ProcessOperator(OperandStack& operandStack, OperationStack& operatio
       return ElementType::POSTFICS;
     }
   }
+  throw std::exception(("Unexpected " + operation.GetName()).c_str());
 }
 
 /**
