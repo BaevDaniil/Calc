@@ -131,7 +131,7 @@ void LoadBase(OperationsDescription& dstr) {
   const BinaryOperator sub = { "-", 1, Sub };
   const BinaryOperator mul = { "*", 2, Mul };
   const BinaryOperator div = { "/", 2, Div };
-  const BinaryOperator assign = { "=", 0, Assign };
+  const BinaryOperator assign = { "=", 0, Assign, BinaryOperator::Associative::RIGHT };
   const PreficsOperator unaryMinus = { "-", 3, UnaryMinus };
   const PreficsOperator prefixIncrement = { "++", 5, PrefixIncrement };
   const PreficsOperator prefixDecrement = { "--", 5, PrefixDecrement };
